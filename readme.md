@@ -11,6 +11,10 @@
 
 ---
 
+- **For Problem 1:** Please check [/src/problem1/solution.js](https://github.com/MinKyawNyunt/code-challenge/blob/main/src/problem1/solution.js)
+- **For Problem 2:** Please check [live demo](https://minkyawnyunt.github.io/code-challenge/)
+- **For Problem 3:** Please read [/src/problem3/readme.md](https://github.com/MinKyawNyunt/code-challenge/blob/main/src/problem3/readme.md)
+
 # 99Tech Code Challenge #1 #
 
 Note that if you fork this repository, your responses may be publicly linked to this repo.  

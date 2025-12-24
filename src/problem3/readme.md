@@ -27,7 +27,7 @@ interface WalletBalance {
 
 ---
 
-## 2. inEfficient getPriority function
+## 2. In-Efficient getPriority function
 **Problem:**
 The original getPriority function used a switch statement to assign priorities to blockchains. This approach is verbose and less efficient, especially as the list grows. Using a lookup object (map) provides constant-time (O(1)) access and makes the code cleaner and easier to maintain.
 
@@ -131,7 +131,7 @@ return 0;
 ---
 
 
-## 5. getPriority calling multiple time
+## 5. getPriority function calling multiple time
 **Problem:**
 In the original code, the getPriority function was called multiple times for each balance. Once during filtering and again during sorting. This is inefficient, especially if the list is large, as it repeats the same calculation.
 
@@ -256,7 +256,7 @@ const usdValue = (prices[balance.currency as keyof typeof prices] ?? 0) * balanc
 
 ---
 
-## 10. using array index as WalletRow Key
+## 10. Using array index as WalletRow Key
 **Problem:**
 Using the array index as the key prop in React lists can lead to rendering bugs, especially when the list changes (items are added, removed, or reordered). This can cause React to incorrectly associate components with data, resulting in unexpected UI behavior. It's better to use a unique and stable identifier, such as currency, for the key.
 
@@ -301,7 +301,7 @@ const classes = {
 
 ---
 
-[### Complete Working Code can be check inside /src/problem3/solution/app/WalletPage/index.tsx](https://github.com/MinKyawNyunt/code-challenge/blob/main/src/problem3/solution/app/WalletPage/index.tsx)
+### Complete Working Code can be check inside [/src/problem3/solution/app/WalletPage/index.tsx](https://github.com/MinKyawNyunt/code-challenge/blob/main/src/problem3/solution/app/WalletPage/index.tsx)
 
 
 
