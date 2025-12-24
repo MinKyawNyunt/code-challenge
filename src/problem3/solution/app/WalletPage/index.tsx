@@ -17,41 +17,24 @@ export const WalletPage: React.FC<Props> = () => {
   const balances = useWalletBalances();
   const prices = usePrices();
 
-  const getPriority = (blockchain: any): number => {
-    switch (blockchain) {
-      case 'Osmosis':
-        return 100
-      case 'Ethereum':
-        return 50
-      case 'Arbitrum':
-        return 30
-      case 'Zilliqa':
-        return 20
-      case 'Neo':
-        return 20
-      default:
-        return -99
-    }
-  }
+  const PRIORITY_MAP: Record<string, number> = {
+  Osmosis: 100,
+  Ethereum: 50,
+  Arbitrum: 30,
+  Zilliqa: 20,
+  Neo: 20,
+};
+
+const getPriority = (blockchain: string) => PRIORITY_MAP[blockchain] ?? -99;
 
   const sortedBalances = useMemo(() => {
-    return balances.filter((balance: WalletBalance) => {
-      const balancePriority = getPriority(balance.blockchain);
-      if (balancePriority > -99 && balance.amount > 0) {
-        return true;
-      }
-      return false
-    }).sort((lhs: WalletBalance, rhs: WalletBalance) => {
-      const leftPriority = getPriority(lhs.blockchain);
-      const rightPriority = getPriority(rhs.blockchain);
-      if (leftPriority > rightPriority) {
-        return -1;
-      } else if (rightPriority > leftPriority) {
-        return 1;
-      }
-
-      return 0;
-    });
+    return balances
+      .map(balance => ({
+        ...balance,
+        priority: getPriority(balance.blockchain),
+      }))
+      .filter(b => b.priority > -99 && b.amount > 0)
+      .sort((a, b) => b.priority - a.priority);
   }, [balances]);
 
   const classes = {
@@ -64,7 +47,7 @@ export const WalletPage: React.FC<Props> = () => {
       <WalletRow
         currency={balance.currency}
         className={classes.row}
-        key={index}
+        key={balance.currency}
         amount={balance.amount}
         usdValue={usdValue}
         formattedAmount={balance.amount.toFixed()}
