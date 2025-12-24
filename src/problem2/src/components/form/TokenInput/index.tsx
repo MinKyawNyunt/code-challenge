@@ -52,7 +52,7 @@ const TokenInput = <TFieldValues extends FieldValues>({
 									   inputMode="decimal"
 									   value={field.value || ""}
 									   onChange={(e) => {
-										   if (e.target.value.length < 20) {
+										   if (e.target.value.length < 16) {
 											   field.onChange(e);
 											   onValueChange(e.target.value);
 										   }
