@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import TokenInput from "../form/TokenInput";
 import Button from "../form/Button";
 import SwapDirectionBtn from "./SwapDirectionBtn";
