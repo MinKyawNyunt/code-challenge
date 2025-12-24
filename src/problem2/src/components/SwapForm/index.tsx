@@ -87,6 +87,7 @@ export default function SwapForm() {
 					disabled={isProcessing}
 					error={errors.fromAmount?.message}
 					onValueChange={setFromAmount}
+					autoFocus={true}
 				/>
 
 				<SwapDirectionBtn />

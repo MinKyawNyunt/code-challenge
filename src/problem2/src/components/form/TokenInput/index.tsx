@@ -14,6 +14,7 @@ interface TokenInputProps<TFieldValues extends FieldValues> {
 	disabled?: boolean;
 	error?: string;
 	onValueChange: (value: string) => void;
+	autoFocus?: boolean;
 }
 
 const TokenInput = <TFieldValues extends FieldValues>({
@@ -27,6 +28,7 @@ const TokenInput = <TFieldValues extends FieldValues>({
 	disabled = false,
 	error,
 	onValueChange,
+	autoFocus = false,
 }: TokenInputProps<TFieldValues>) => {
 
 	return (
@@ -44,22 +46,23 @@ const TokenInput = <TFieldValues extends FieldValues>({
 							name={name}
 							control={control}
 							render={({ field }) => (
-								<input
-									id={id}
-									type="number"
-									inputMode="decimal"
-									value={field.value || ""}
-									onChange={(e) => {
-										if (e.target.value.length < 20) {
-											field.onChange(e);
-											onValueChange(e.target.value);
-										}
-									}}
-									className="flex-1 min-w-0 bg-transparent text-white text-2xl font-semibold outline-none placeholder:text-white/30 disabled:cursor-not-allowed [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-									style={{
-										fontSize: field.value.length > 10 ? `${Math.max(1, 2 - (field.value.length - 10) * 0.1)}rem` : '1.5rem'
-									}}
-								/>
+								   <input
+									   id={id}
+									   type="number"
+									   inputMode="decimal"
+									   value={field.value || ""}
+									   onChange={(e) => {
+										   if (e.target.value.length < 20) {
+											   field.onChange(e);
+											   onValueChange(e.target.value);
+										   }
+									   }}
+									   className="flex-1 min-w-0 bg-transparent text-white text-2xl font-semibold outline-none placeholder:text-white/30 disabled:cursor-not-allowed [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+									   style={{
+										   fontSize: field.value.length > 10 ? `${Math.max(1, 2 - (field.value.length - 10) * 0.1)}rem` : '1.5rem'
+									   }}
+									   autoFocus={autoFocus}
+								   />
 							)}
 						/>
 

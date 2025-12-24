@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { WalletPage } from "./WalletPage";
 
 export default function Home() {

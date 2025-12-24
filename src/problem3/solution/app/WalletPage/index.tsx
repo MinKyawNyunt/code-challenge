@@ -41,7 +41,7 @@ const getPriority = (blockchain: string) => PRIORITY_MAP[blockchain] ?? -99;
     row: "flex flex-col items-left justify-between py-2 px-4 bg-zinc-800 rounded-lg mb-2 shadow hover:bg-zinc-700 transition-colors"
   };
 
-  const rows = sortedBalances.map((balance: WalletBalance, index: number) => {
+  const rows = sortedBalances.map((balance: WalletBalance) => {
     const usdValue = (prices[balance.currency as keyof typeof prices] ?? 0) * balance.amount;
     return (
       <WalletRow
