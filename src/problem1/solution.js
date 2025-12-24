@@ -38,3 +38,8 @@ var sum_to_n_c = function(n) {
     if (n <= 0) return 0;
     return n + sum_to_n_c(n - 1);
 };
+
+
+console.log(sum_to_n_a(10));
+console.log(sum_to_n_b(10));
+console.log(sum_to_n_c(10));
