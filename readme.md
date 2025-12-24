@@ -1,3 +1,16 @@
+# 🚀 Live Demo
+
+[https://minkyawnyunt.github.io/code-challenge/](https://minkyawnyunt.github.io/code-challenge/)
+
+---
+
+# 📬 Contact Information
+
+- **Name:** Min Kyaw Nyunt  
+- **Email:** [minkyawnyunt@outlook.com](mailto:minkyawnyunt@outlook.com)
+
+---
+
 # 99Tech Code Challenge #1 #
 
 Note that if you fork this repository, your responses may be publicly linked to this repo.  
