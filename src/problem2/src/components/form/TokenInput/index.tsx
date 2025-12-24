@@ -56,9 +56,9 @@ const TokenInput = <TFieldValues extends FieldValues>({
 										onValueChange(e.target.value);
 									}}
 									className="flex-1 min-w-0 bg-transparent text-white text-2xl font-semibold outline-none placeholder:text-white/30 disabled:cursor-not-allowed [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-									style={{
-										fontSize: field.value.length > 10 ? `${Math.max(1, 2 - (field.value.length - 10) * 0.1)}rem` : '1.5rem'
-									}}
+									// style={{
+									// 	fontSize: field.value.length > 10 ? `${Math.max(1, 2 - (field.value.length - 10) * 0.1)}rem` : '1.5rem'
+									// }}
 									autoFocus={autoFocus}
 								/>
 							)}
