@@ -5,7 +5,11 @@ import tailwindcss from 'tailwindcss'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "https://minkyawnyunt.github.io/code-challenge/",
+  base: "/code-challenge/",
+  build: {
+    outDir: "../../docs",
+    emptyOutDir: true,
+  },
   css: {
     postcss: {
       plugins: [tailwindcss()],
