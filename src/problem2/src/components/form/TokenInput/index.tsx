@@ -59,6 +59,7 @@ const TokenInput = <TFieldValues extends FieldValues>({
 									// style={{
 									// 	fontSize: field.value.length > 10 ? `${Math.max(1, 2 - (field.value.length - 10) * 0.1)}rem` : '1.5rem'
 									// }}
+									placeholder="0.00"
 									autoFocus={autoFocus}
 								/>
 							)}
